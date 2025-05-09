@@ -12,8 +12,13 @@
 <body>
   <header class="topbar">
   <div class="container">
-    <img src="JakobStudiosLogo.svg" alt="Jakob Studios Logo" class="logo-small">
+    <a href="/">
+  <img src="JakobStudiosLogo.svg" alt="Jakob Studios Logo" class="logo-small">
+</a>
+
     <nav>
+      <button class="burger" aria-label="Menü öffnen">☰</button>
+
       <ul class="nav-links">
         <li><a href="#about">Über uns</a></li>
         <li><a href="#news">News</a></li>
@@ -30,11 +35,15 @@
   <main>
     <section id="about">
       <h2>Über uns</h2>
-      <p>Jakob Studios ist ein nichtkommerzielles Studio mit Fokus auf Kreativität, Innovation und lokales Engagement. Wir realisieren Medienprojekte mit Herz – von 3D-Art über Film bis hin zu digitalen Anwendungen.</p>
+      <p>Jakob Studios ist ein nichtkommerzielles Studio mit Fokus auf Kreativität, Innovation und lokales Engagement. Wir realisieren qualitative Medienprojekte mit viel Mühe und Arbeit – von 3D-Art über Film bis hin zu digitalen Anwendungen.
+        Unser Unternehmen existiert schon länger und hat immer wieder an kleinen Projekten mitgewirkt. Doch im Mai 2025 wurde erstmals offiziell eine der ersten Projekte öffentlich vorgestellt. 
+        Kurz danach ging die offizielle Jakob Studios Website online unnd nun ist Jakob Studios schon eine bekannte Marke aus der Umgebung geworden und widmet sich aktiv neunen Projekten.
+      </p>
     </section>
 
     <section id="services">
       <h2>Leistungen</h2>
+      <p>Wir bieten eine Große Palette an den unterschiedlichsten Aufgaben, denn es gibt kein Projekt, dem wir uns nicht gewachsen fühlen! <br><br></p>
       <ul>
         <li>🎥 Videoproduktion & Schnitt</li>
         <li>🎮 Game Design & Prototyping</li>
@@ -47,7 +56,7 @@
 
     <section id="partners">
       <h2>Partner</h2>
-      <p>Wir unterstützen derzeit die L&T vom FSG durch Logo-Design, Markenentwicklung und kreative Medienarbeit.</p>
+      <p>Wir unterstützen derzeit die Licht und Ton AG vom FSG durch Logo-Design, Dienstmarkenentwicklung und weitere kreative Medienarbeiten.</p>
     </section>
 
     <section id="projects" class="projects-section">
@@ -61,8 +70,8 @@
         </a>
         
         <a href="projects/lichtundtonlogo.html" class="project-card">
-          <h3>🎨 Licht & Ton Logo</h3>
-          <p>2D-Logoentwicklung auf Basis der Dienstmarke</p>
+          <h3>🎨 Licht & Ton Logo und T-Shirt</h3>
+          <p>2D-Logoentwicklung auf Basis der Dienstmarke für das T-Shirt</p>
         </a>
       </div>
     </section>
@@ -70,7 +79,7 @@
 
     <section id="contact">
       <h2>Kontakt</h2>
-      <p>Interesse? Schreib uns gerne eine Nachricht oder melde dich direkt beim Obersten"geschäfts"führer Jakob.</p>
+      <p>Interesse? Schreib uns gerne eine Nachricht oder melde dich direkt beim obersten "Geschäfts"führer Jakob.<br><br><br></p>
       <form action="https://formspree.io/f/mqaqbewd" method="POST">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" required>
@@ -89,5 +98,15 @@
   <footer>
     <p>&copy; 2025 Jakob Studios. Nichtkommerziell aber lokal.</p>
   </footer>
+
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>

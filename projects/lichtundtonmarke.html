@@ -12,19 +12,23 @@
 <body>
   <header class="topbar">
     <div class="container">
-      <img src="../JakobStudiosLogo.svg" alt="Jakob Studios Logo" class="logo-small">
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">Über uns</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#partners">Partner</a></li>
-          <li><a href="#projects">Projekte</a></li>
-          <li><a href="#services">Leistungen</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#contact">Kontakt</a></li>
-        </ul>
-      </nav>
-    </div>
+    <a href="/">
+  <img src="../JakobStudiosLogo.svg" alt="Jakob Studios Logo" class="logo-small">
+</a>
+    <nav>
+      <button class="burger" aria-label="Menü öffnen">☰</button>
+
+      <ul class="nav-links">
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#partners">Partner</a></li>
+        <li><a href="#projects">Projekte</a></li>
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
   </header>
 
   <main>
@@ -54,5 +58,15 @@
   <footer>
     <p>&copy; 2025 Jakob Studios. Nichtkommerziell aber lokal.</p>
   </footer>
+
+<script>
+  const burger = document.querySelector('.burger');
+  const nav = document.querySelector('.nav-links');
+
+  burger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
 </body>
 </html>
