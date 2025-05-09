@@ -1,0 +1,293 @@
+/* Grundlegendes Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 110px; /* Höhe deiner Top-Bar anpassen */
+}
+
+
+body {
+  background-color: #111;
+  color: #f4f4f4;
+  line-height: 1.6;
+  font-size: 18px;
+  padding: 0;
+}
+
+
+
+/* Inhalt */
+main {
+  padding: 2rem 1.5rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.7s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+ul li::before {
+  content: "▶";
+  color: #ffffff;
+  margin-right: 0.5rem;
+}
+
+/* Formular */
+form {
+  background: #1e1e1e;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  animation: fadeInUp 0.8s ease both;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0 1rem 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+form button {
+  padding: 0.75rem 1.5rem;
+  background-color: #e63946;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+  background-color: #ff4f5e;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #000;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    height: 40px;
+  }
+}
+
+/* Neuer Header-Stil */
+.topbar {
+  background-color: #000;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  border-bottom: 2px solid #444;
+  padding: 0.5rem;
+}
+
+.topbar .container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-small {
+  height: 25px;
+  width: auto;
+  transition: transform 0.3s ease;
+  margin-right: auto;
+}
+
+.logo-small:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.nav-links li a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.nav-links li a::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover {
+  color: #fff;
+}
+
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  color: #ddd;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+    
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+    
+  }
+
+  .nav-links.active {
+    max-height: 600px; /* hoch genug für alle Einträge */
+    
+  }
+
+  .nav-links li {
+    margin-bottom: -2rem;
+    
+  }
+
+  /* Desktop-Layout deaktivieren */
+  .topbar .container {
+    align-items: stretch;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}
+
+
+.download-button {
+  display: inline-block;
+  margin: 0.25rem 0;
+  background-color: #222;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.download-button:hover {
+  background-color: #444;
+}
+
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 16rem;
+  text-align: left;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  margin-top: 2rem;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(255,255,255,0.1);
+}
