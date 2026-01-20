@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Parallax Test</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: #111;
+    }
+
+    .parallax {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .coolesBild {
+      position: absolute;
+      top: 200px;                   /* Start etwas weiter unten */
+      left: 50%;
+      min-width: 110%;              /* etwas größer als Container */
+      height: auto;
+      z-index: -1;
+
+      /* Moderner Style */
+      border-radius: 25px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      opacity: 0.95;
+      filter: brightness(105%) contrast(105%);
+      transform: translateX(-50%) translateY(0);
+      will-change: transform;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 200px 50px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="parallax">
+    <img src="../about/Jakob_Studios_Headquater.png" alt="KI Bild" class="coolesBild">
+    <div class="content">
+      <h1>Willkommen!</h1>
+      <p>Hier ist dein Text über dem Parallax-Bild.</p>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>Weiterer Textbereich</h2>
+    <p>Scroll runter, um den Effekt zu sehen.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis.</p>
+  </div>
+
+  <script>
+    window.addEventListener("scroll", function() {
+      const bild = document.querySelector(".coolesBild");
+      let scrollPos = window.scrollY;
+      // Y-Bewegung beim Scrollen
+      bild.style.transform = `translateX(-50%) translateY(${scrollPos * 0.5}px)`;
+    });
+  </script>
+
+</body>
+</html>
