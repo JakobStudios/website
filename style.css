@@ -3,14 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   scroll-behavior: smooth;
 }
 
 section {
   scroll-margin-top: 110px; /* Höhe deiner Top-Bar anpassen */
 }
-
 
 body {
   background-color: #111;
@@ -19,8 +18,6 @@ body {
   font-size: 18px;
   padding: 0;
 }
-
-
 
 /* Inhalt */
 main {
@@ -90,7 +87,9 @@ form button {
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
 }
 
 form button:hover {
@@ -134,7 +133,7 @@ footer {
   top: 0;
   width: 100%;
   z-index: 999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   border-bottom: 2px solid #444;
   padding: 0.5rem;
 }
@@ -169,13 +168,15 @@ footer {
   color: #ddd;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
   padding-bottom: 2px;
   position: relative;
 }
 
 .nav-links li a::after {
-  content: '';
+  content: "";
   display: block;
   width: 0%;
   height: 2px;
@@ -201,14 +202,13 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 2rem;
 }
 
 /* Mobile only */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .burger {
     display: block;
-    
   }
 
   .nav-links {
@@ -217,17 +217,16 @@ footer {
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.4s ease;
-    
+    margin-right: 50vw;
+    margin-left: -200px;
   }
 
   .nav-links.active {
     max-height: 600px; /* hoch genug für alle Einträge */
-    
   }
 
   .nav-links li {
     margin-bottom: -2rem;
-    
   }
 
   /* Desktop-Layout deaktivieren */
@@ -239,7 +238,6 @@ footer {
     display: flex;
   }
 }
-
 
 .download-button {
   display: inline-block;
@@ -272,8 +270,10 @@ footer {
   text-align: left;
   color: #fff;
   text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin-top: 2rem;
 }
 
@@ -289,5 +289,217 @@ footer {
 
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(255,255,255,0.1);
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+}
+
+.parallax {
+  position: relative;
+  height: 140vh;
+  overflow: hidden; /* ⬅️ schneidet das Bild an den Ecken ab */
+  border-radius: 25px; /* ⬅️ Container hat runde Ecken */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* moderner Schatten */
+}
+
+.coolesBild {
+  position: absolute;
+  top: -33%;
+  left: 50%;
+
+  height: auto;
+  z-index: -1;
+
+  /* Bild-Optik */
+  opacity: 0.95;
+  filter: brightness(105%) contrast(105%);
+  transform: translateX(-50%) translateY(0);
+  will-change: transform;
+}
+
+.project-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.project-button:hover {
+  opacity: 0.85;
+}
+
+.partner {
+  margin-top: 60px;
+}
+
+.partner img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.partner-button {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.partner-button:hover {
+  opacity: 0.85;
+}
+
+.team-member {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 60px;
+  max-width: 900px;
+}
+
+.team-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.team-text {
+  max-width: 650px;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* --- HERO --- */
+#hero {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* --- Buttons / Links --- */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.cta-button:hover {
+  opacity: 0.85;
+}
+
+.text-link {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* --- SERVICES GRID --- */
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.services-grid div {
+  width: 200px;
+  text-align: center;
+}
+
+/* --- PROJECTS GRID --- */
+.projects-grid,
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.project-card,
+.partner-card {
+  width: 280px;
+  text-align: center;
+}
+
+.project-card img,
+.partner-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* --- TEAM --- */
+.team-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.team-flex img {
+  width: 180px;
+  border-radius: 50%;
+}
+
+.team-text {
+  max-width: 500px;
+}
+
+#contact-cta {
+  padding: 80px 20px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+#contact-cta a.cta-button {
+  background-color: #fff;
+  color: #000;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .team-flex,
+  .projects-grid,
+  .partners-grid,
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-text,
+  .project-card,
+  .partner-card,
+  .services-grid div {
+    width: 90%;
+  }
 }
